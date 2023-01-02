@@ -1,7 +1,3 @@
-'use strict';
+import BasicProvider from './components/context/BasicProvider';
 
-module.exports = core;
-
-function core() {
-    return "Hello from core";
-}
+export { BasicProvider };

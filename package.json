@@ -13,28 +13,52 @@
     "iOS"
   ],
   "author": "Mikalyh <mikal.code@gmail.com>",
-  "homepage": "https://github.com/mikalyh/react-native-basic#readme",
+  "homepage": "https://github.com/react-native-basic/core#readme",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikalyh/react-native-basic.git"
+    "url": "git+https://github.com/react-native-basic/core.git"
   },
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
   "bugs": {
-    "url": "https://github.com/mikalyh/react-native-basic/issues"
+    "url": "https://github.com/react-native-basic/core/issues"
   },
-  "gitHead": "f84964552d015cf66b78f8969b691153c32542ab"
+  "gitHead": "f84964552d015cf66b78f8969b691153c32542ab",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.3.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@tsconfig/react-native": "^2.0.3",
+    "@types/jest": "^29.2.5",
+    "@types/react": "^18.0.26",
+    "@types/react-native": "^0.70.8",
+    "@types/react-test-renderer": "^18.0.0",
+    "commitlint": "^17.3.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.1",
+    "react": "^18.2.0",
+    "react-native": "^0.70.6",
+    "react-native-safe-area-context": "^4.4.1",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-safe-area-context": "*"
+  }
 }
