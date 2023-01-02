@@ -1,0 +1,40 @@
+{
+  "name": "@react-native-basic/core",
+  "version": "1.0.3-alpha.0",
+  "description": "The Basics of UI Kit for React Native",
+  "keywords": [
+    "React",
+    "React",
+    "Native",
+    "Basic",
+    "UI",
+    "KIT",
+    "Android",
+    "iOS"
+  ],
+  "author": "Mikalyh <mikal.code@gmail.com>",
+  "homepage": "https://github.com/mikalyh/react-native-basic#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikalyh/react-native-basic.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/core.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/mikalyh/react-native-basic/issues"
+  },
+  "gitHead": "f84964552d015cf66b78f8969b691153c32542ab"
+}
