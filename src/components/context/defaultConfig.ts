@@ -1,8 +1,7 @@
 export const lightColors = {
     background: '#FFFFFF',
     surface: '#F5F7FA',
-    primary: '#F47090',
-    primaryGradient: ['#E96269', '#9E005A'],
+    primary: '#0070BA',
     secondary: '#9FA6B5',
     success: '#37D39B',
     warning: '',
@@ -14,8 +13,7 @@ export const lightColors = {
 export const darkColors = {
     background: '#1d1c22',
     surface: '#F5F7FA',
-    primary: '#F47090',
-    primaryGradient: ['#E96269', '#9E005A'],
+    primary: '#0070BA',
     secondary: '#9FA6B5',
     success: '#37D39B',
     warning: '',

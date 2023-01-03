@@ -10,6 +10,7 @@ import TextInput from './components/form/TextInput';
 //Regular Component
 import AppBar from './components/AppBar';
 import Box from './components/Box';
+import Button from './components/Button';
 import Divider from './components/Divider';
 import ListMenu from './components/ListMenu';
 import Modal from './components/Modal';
@@ -27,6 +28,7 @@ export {
     PasswordInput,
     AppBar,
     Box,
+    Button,
     Divider,
     ListMenu,
     Modal,
