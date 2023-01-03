@@ -1,6 +1,6 @@
 {
     "name": "@react-native-basic/core",
-    "version": "1.1.0-alpha.0",
+    "version": "1.1.1-alpha.0",
     "description": "The Basics of UI Kit for React Native",
     "keywords": [
         "react",
@@ -70,21 +70,16 @@
         "typescript": "^4.9.4"
     },
     "peerDependencies": {
-        "react": "*",
-        "react-native": "*",
         "@types/react": "*",
-        "@types/react-native": "*"
+        "@types/react-native": "*",
+        "react": "*",
+        "react-native": "*"
     },
     "react-native-builder-bob": {
         "source": "src",
         "output": "lib",
         "targets": [
-            [
-                "commonjs",
-                {
-                    "copyFlow": true
-                }
-            ],
+            "commonjs",
             "module",
             "typescript"
         ]
