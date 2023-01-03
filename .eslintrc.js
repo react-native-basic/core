@@ -12,5 +12,17 @@ module.exports = {
                 'no-undef': 'off',
             },
         },
+        {
+            files: ['*.ts', '*.tsx'],
+            rules: {
+                'react-native/no-inline-styles': ['off'],
+            },
+        },
+        {
+            files: ['*.ts', '*.tsx'],
+            rules: {
+                'react-hooks/exhaustive-deps': ['off'],
+            },
+        },
     ],
 };
