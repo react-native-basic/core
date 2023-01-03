@@ -1,4 +1,3 @@
-import Typography from 'components/Typography';
 import React, { useRef } from 'react';
 import {
     Animated,
@@ -14,6 +13,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useBasic } from '../context/BasicProvider';
+import Typography from '../Typography';
 
 interface TypeProps {
     label?: string;

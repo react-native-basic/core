@@ -1,4 +1,3 @@
-import Typography from 'components/Typography';
 import React from 'react';
 import {
     StyleProp,
@@ -12,6 +11,7 @@ import { getVerticalAlignment } from '../../helpers/theme.helper';
 import { LabelValueType } from '../../types/data.type';
 import { AlignmentType } from '../../types/theme.type';
 import { useBasic } from '../context/BasicProvider';
+import Typography from '../Typography';
 
 interface BoxType {
     label: string;

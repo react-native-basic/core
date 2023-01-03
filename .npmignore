@@ -8,3 +8,4 @@ preview/
 .eslintrc
 .prettierignore
 .prettierrc
+bob.config.js
