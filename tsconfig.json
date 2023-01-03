@@ -9,7 +9,6 @@
         "jsx": "react-native",
         "lib": ["es2017"],
         "moduleResolution": "node",
-        "noEmit": true,
         "strict": true,
         "target": "esnext",
         "baseUrl": ".",
