@@ -47,9 +47,8 @@ const Screen: React.FC<TypeProps> = ({
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={[
-                        styles.content,
+                        styles.contentScroll,
                         {
-                            paddingBottom: 20,
                             ...getHorizontalAlignment(horizontalAlignment),
                             ...getVerticalAlignment(verticalAlignment),
                         },
@@ -62,7 +61,6 @@ const Screen: React.FC<TypeProps> = ({
                     style={[
                         styles.content,
                         {
-                            flex: 6,
                             ...getHorizontalAlignment(horizontalAlignment),
                             ...getVerticalAlignment(verticalAlignment),
                         },
@@ -77,7 +75,8 @@ const Screen: React.FC<TypeProps> = ({
 
 const styles = StyleSheet.create({
     container: { flex: 10 },
-    content: {},
+    content: { flex: 6 },
+    contentScroll: { paddingBottom: 20 },
 });
 
 export default Screen;
