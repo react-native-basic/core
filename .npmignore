@@ -1,10 +1,10 @@
+__tests__
 node_modules/
+scripts/
+lib/
+preview/
+.husky/
 .babelrc
 .eslintrc
 .prettierignore
 .prettierrc
-__tests__
-.husky/
-scripts/
-lib/
-preview/
