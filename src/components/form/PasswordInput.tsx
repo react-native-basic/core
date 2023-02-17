@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import {
+    KeyboardTypeOptions,
+    StyleProp,
+    TextStyle,
+    ViewStyle,
+} from 'react-native';
 import TextInput from './TextInput';
 
 export interface TypeProps {
+    label?: string;
+    keyboardType?: KeyboardTypeOptions;
     textAlign?: 'left' | 'center' | 'right';
     leftIcon?: string;
     rightIcon?: string;
@@ -19,6 +26,8 @@ export interface TypeProps {
 }
 
 const PasswordInput: React.FC<TypeProps> = ({
+    label,
+    keyboardType,
     textAlign,
     leftIcon,
     rightIcon,
@@ -42,6 +51,7 @@ const PasswordInput: React.FC<TypeProps> = ({
 
     return (
         <TextInput
+            label={label}
             secureTextEntry={!textShown}
             autoCapitalize="none"
             textAlign={textAlign}
@@ -57,6 +67,7 @@ const PasswordInput: React.FC<TypeProps> = ({
             helperText={helperText}
             style={style}
             inputStyle={inputStyle}
+            keyboardType={keyboardType}
         />
     );
 };

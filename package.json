@@ -1,6 +1,6 @@
 {
     "name": "@react-native-basic/core",
-    "version": "1.1.2-alpha.0",
+    "version": "1.1.4-alpha.0",
     "description": "The Basics of UI Kit for React Native",
     "keywords": [
         "react",
@@ -48,7 +48,7 @@
     "bugs": {
         "url": "https://github.com/react-native-basic/core/issues"
     },
-    "gitHead": "f84964552d015cf66b78f8969b691153c32542ab",
+    "gitHead": "c36b223e89a022fc4a78417d9bee9548f4e0b04f",
     "devDependencies": {
         "@commitlint/config-conventional": "^17.3.0",
         "@react-native-community/eslint-config": "^3.2.0",

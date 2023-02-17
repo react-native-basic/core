@@ -1,8 +1,11 @@
+import Typography from 'components/Typography';
 import React, { useRef } from 'react';
 import {
     Animated,
     Easing,
+    KeyboardTypeOptions,
     Platform,
+    ReturnKeyTypeOptions,
     StyleProp,
     StyleSheet,
     TextInput as DefultTextInput,
@@ -13,7 +16,6 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useBasic } from '../context/BasicProvider';
-import Typography from '../Typography';
 
 interface TypeProps {
     label?: string;
@@ -21,7 +23,9 @@ interface TypeProps {
     autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
     textAlign?: 'left' | 'center' | 'right';
     leftIcon?: string;
+    leftText?: string;
     rightIcon?: string;
+    rightText?: string;
     leftAction?: () => void;
     rightAction?: () => void;
     placeholder?: string;
@@ -31,6 +35,9 @@ interface TypeProps {
     size?: 'normal' | 'huge';
     error?: boolean | string;
     helperText?: string;
+    keyboardType?: KeyboardTypeOptions;
+    returnKeyType?: ReturnKeyTypeOptions;
+    onSubmitEditing?: () => void;
     style?: StyleProp<ViewStyle>;
     inputStyle?: StyleProp<TextStyle>;
 }
@@ -43,6 +50,8 @@ const TextInput: React.FC<TypeProps> = ({
     leftIcon,
     rightIcon,
     leftAction,
+    leftText,
+    rightText,
     rightAction,
     placeholder,
     onChange,
@@ -51,6 +60,9 @@ const TextInput: React.FC<TypeProps> = ({
     size = 'normal',
     error = false,
     helperText,
+    keyboardType,
+    returnKeyType,
+    onSubmitEditing,
     style,
     inputStyle,
 }) => {
@@ -106,7 +118,7 @@ const TextInput: React.FC<TypeProps> = ({
                         borderColor: error ? colors.danger : borderColorAnim,
                         borderRadius: radius.medium,
                         backgroundColor: disabled
-                            ? colors.caption
+                            ? colors.surface
                             : colors.background,
                     },
                     style,
@@ -131,6 +143,10 @@ const TextInput: React.FC<TypeProps> = ({
                             color={colors.text + '55'}
                         />
                     </View>
+                ) : leftText ? (
+                    <Typography color="caption" align="center" paddingLeft={20}>
+                        {leftText}
+                    </Typography>
                 ) : null}
                 <DefultTextInput
                     style={[
@@ -159,7 +175,9 @@ const TextInput: React.FC<TypeProps> = ({
                     multiline={textAlign === 'center' ? true : false}
                     numberOfLines={textAlign === 'center' ? 1 : undefined}
                     blurOnSubmit={textAlign === 'center' ? true : undefined}
-                    returnKeyType={textAlign === 'center' ? 'done' : undefined}
+                    returnKeyType={
+                        textAlign === 'center' ? 'done' : returnKeyType
+                    }
                     onChangeText={onChange}
                     onFocus={onFocus}
                     onBlur={onBlur}
@@ -167,6 +185,8 @@ const TextInput: React.FC<TypeProps> = ({
                     editable={!disabled}
                     secureTextEntry={secureTextEntry}
                     autoCapitalize={autoCapitalize}
+                    keyboardType={keyboardType}
+                    onSubmitEditing={onSubmitEditing}
                 />
                 {rightIcon && rightAction ? (
                     <TouchableOpacity
@@ -187,6 +207,14 @@ const TextInput: React.FC<TypeProps> = ({
                             color={colors.text + '55'}
                         />
                     </View>
+                ) : rightText ? (
+                    <Typography
+                        color="caption"
+                        align="center"
+                        paddingRight={20}
+                    >
+                        {rightText}
+                    </Typography>
                 ) : null}
             </Animated.View>
             {helperText || error ? (
@@ -238,6 +266,11 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginTop: 3,
         alignItems: 'center',
+    },
+    loader: {
+        width: 80,
+        height: 80,
+        marginRight: -30,
     },
 });
 

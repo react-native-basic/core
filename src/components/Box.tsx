@@ -1,9 +1,15 @@
 import React from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import {
+    ScrollView,
+    StyleProp,
+    StyleSheet,
+    View,
+    ViewStyle,
+} from 'react-native';
 import { AlignItemsType, JustifyContentType } from '../types/theme.type';
 
 interface TypeProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     margin?: number;
     marginTop?: number;
     marginRight?: number;
@@ -15,6 +21,7 @@ interface TypeProps {
     paddingBottom?: number;
     paddingLeft?: number;
     flex?: number;
+    scrollable?: boolean;
     justifyContent?: JustifyContentType;
     alignItems?: AlignItemsType;
     style?: StyleProp<ViewStyle>;
@@ -33,34 +40,65 @@ const Box: React.FC<TypeProps> = ({
     paddingBottom = 0,
     paddingLeft = 0,
     flex,
+    scrollable,
     justifyContent,
     alignItems,
     style = {},
 }) => {
     return (
-        <View
-            style={[
-                styles.container,
-                {
-                    margin,
-                    marginTop,
-                    marginRight,
-                    marginBottom,
-                    marginLeft,
-                    padding,
-                    paddingTop,
-                    paddingRight,
-                    paddingBottom,
-                    paddingLeft,
-                    flex,
-                    justifyContent,
-                    alignItems,
-                },
-                style,
-            ]}
-        >
-            {children}
-        </View>
+        <>
+            {scrollable === true ? (
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={[
+                        styles.container,
+                        {
+                            margin,
+                            marginTop,
+                            marginRight,
+                            marginBottom,
+                            marginLeft,
+                            padding,
+                            paddingTop,
+                            paddingRight,
+                            paddingBottom,
+                            paddingLeft,
+                            flex,
+                            justifyContent,
+                            alignItems,
+                        },
+                        style,
+                    ]}
+                >
+                    {children}
+                </ScrollView>
+            ) : (
+                <View
+                    style={[
+                        styles.container,
+                        {
+                            margin,
+                            marginTop,
+                            marginRight,
+                            marginBottom,
+                            marginLeft,
+                            padding,
+                            paddingTop,
+                            paddingRight,
+                            paddingBottom,
+                            paddingLeft,
+                            flex,
+                            justifyContent,
+                            alignItems,
+                        },
+                        style,
+                    ]}
+                >
+                    {children}
+                </View>
+            )}
+        </>
     );
 };
 

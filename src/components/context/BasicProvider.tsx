@@ -6,15 +6,21 @@ const BasicContext = createContext(defaultConfig);
 interface TypeProps {
     children: React.ReactNode;
     darkMode?: boolean;
+    themeConfig?: typeof defaultConfig;
 }
 
-const BasicProvider: React.FC<TypeProps> = ({ children, darkMode = false }) => {
+const BasicProvider: React.FC<TypeProps> = ({
+    children,
+    themeConfig,
+    darkMode = false,
+}) => {
     return (
         <BasicContext.Provider
             value={{
                 ...defaultConfig,
                 darkMode: darkMode,
                 colors: darkMode ? darkColors : lightColors,
+                ...themeConfig,
             }}
         >
             {children}
