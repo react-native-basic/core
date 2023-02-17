@@ -1,4 +1,4 @@
-import Typography from 'components/Typography';
+import Typography from '../Typography';
 import React, { useRef } from 'react';
 import {
     Animated,
